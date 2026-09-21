@@ -9,7 +9,7 @@ A static course portfolio for [DSC 106 Lab 1](https://dsc106.com/labs/lab01/), b
 - **Resume**: a fictionalized resume using sections, articles, lists, links, and machine-readable dates.
 - **Contact**: the lab's native HTML email form.
 
-For privacy, the resume uses fictional education, dates, experience, and skills. The project concepts are examples, not completed projects. The name and GitHub profile identify the author.
+The resume uses the author's real name and university, University of California San Diego (UCSD). For privacy, other resume details, including dates, coursework, experience, and skills, are illustrative. The project concepts are examples, not completed projects. The GitHub profile also identifies the author.
 
 ## Preview locally
 
