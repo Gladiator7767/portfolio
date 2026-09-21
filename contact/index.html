@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="light dark">
+  <title>Contact · Yifeng Zheng</title>
+  <link rel="stylesheet" href="../style.css">
+  <script src="../global.js" type="module"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <header class="site-header">
+    <a class="brand" href="../">YIFENG ZHENG <span>DSC 106 / Course portfolio</span></a>
+    <div id="theme-control"></div>
+  </header>
+  <nav aria-label="Main navigation">
+    <a href="../">Home</a>
+    <a href="../projects/">Projects</a>
+    <a href="../resume/">Resume</a>
+    <a class="current" aria-current="page" href="./">Contact</a>
+    <a href="https://github.com/Gladiator7767" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+  </nav>
+  <main id="main">
+    <p class="eyebrow">Say hello</p>
+    <h1>Contact</h1>
+    <p class="lede">Try an email draft using the form below.</p>
+    <p class="notice" id="contact-status">Course demonstration only. The recipient <span class="contact-address">portfolio@example.com</span> is an example address, not a real contact inbox. This form opens your email app; it does not send a message automatically.</p>
+    <form id="contact-form" action="mailto:portfolio@example.com" method="post" enctype="text/plain" aria-describedby="contact-status">
+      <label>Your email
+        <input type="email" name="email" autocomplete="email" value="visitor@example.com" required>
+      </label>
+      <label>Subject
+        <input type="text" name="subject" value="Hello from the portfolio" required>
+      </label>
+      <label>Message
+        <textarea name="body" required>This is a test message for the course contact form.</textarea>
+      </label>
+      <button type="submit">Open email draft</button>
+    </form>
+    <p>You will need an email app or a configured browser mail handler to open the draft.</p>
+  </main>
+  <footer>Yifeng Zheng · DSC 106 course portfolio</footer>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="440" viewBox="0 0 640 440">
+  <title>Data-inspired illustration</title>
+  <desc>Decorative green bars and gold dots on a pale green grid. This illustration does not encode a dataset.</desc>
+  <rect width="640" height="440" rx="20" fill="#e6f0e8"/>
+  <g stroke="#c4d7c8" stroke-width="1">
+    <path d="M60 90H580 M60 170H580 M60 250H580 M60 330H580"/>
+    <path d="M100 60V370 M210 60V370 M320 60V370 M430 60V370 M540 60V370"/>
+  </g>
+  <g fill="#2b7d66">
+    <rect x="86" y="250" width="55" height="100" rx="8"/>
+    <rect x="193" y="190" width="55" height="160" rx="8"/>
+    <rect x="300" y="225" width="55" height="125" rx="8"/>
+    <rect x="407" y="125" width="55" height="225" rx="8"/>
+    <rect x="514" y="90" width="55" height="260" rx="8"/>
+  </g>
+  <g fill="#e4a742" stroke="#e6f0e8" stroke-width="5">
+    <circle cx="113" cy="203" r="11"/><circle cx="220" cy="148" r="11"/>
+    <circle cx="327" cy="175" r="11"/><circle cx="434" cy="78" r="11"/>
+  </g>
+  <text x="60" y="401" fill="#325749" font-family="system-ui, sans-serif" font-size="16" letter-spacing="3">DATA / DESIGN / LEARNING</text>
+</svg>
