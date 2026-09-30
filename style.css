@@ -71,3 +71,4 @@ footer { border-top: 1px solid var(--border); margin-top: 3rem; padding-top: 1re
   form label { grid-template-columns: 1fr; gap: 0.3rem; }
   .brand span { display: block; margin-left: 0; }
 }
+

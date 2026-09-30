@@ -34,3 +34,4 @@ The contact form uses `mailto:portfolio@example.com`, `method="post"`, and `enct
 ## Publication
 
 This folder can be published with GitHub Pages using the `main` branch and repository root. Pages needs no custom build configuration for this site. Source files were prepared with AI assistance and should be understood and reviewed as part of the course exercise.
+
