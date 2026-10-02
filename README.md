@@ -29,9 +29,8 @@ Press Ctrl+C to stop that server. Use an HTTP URL so the JavaScript module loads
 
 The locally authored SVG in `images/data-illustration.svg` is decorative and does not represent a dataset.
 
-The contact form uses `mailto:portfolio@example.com`, `method="post"`, and `enctype="text/plain"`. **This is a demonstration address, not a working inbox.** Submitting opens the visitor's configured email application; it does not automatically send mail. Delivery is not provided by this website. The assignment's explicit permission to fictionalize a resume does not establish whether an example contact address meets the grading requirements.
+The contact form uses the owner's chosen contact address, `mailto:arthurzheng776721647@gmail.com`, with `method="post"` and `enctype="text/plain"`. Submitting opens the visitor's configured email application with a draft. The visitor reviews and sends it from that application; this website does not send mail automatically. The prefilled sender, subject, and message are examples that visitors can replace.
 
 ## Publication
 
 This folder can be published with GitHub Pages using the `main` branch and repository root. Pages needs no custom build configuration for this site. Source files were prepared with AI assistance and should be understood and reviewed as part of the course exercise.
-
