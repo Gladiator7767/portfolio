@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="400" viewBox="0 0 600 400">
+  <title>Weekly pattern illustration</title>
+  <desc>Decorative blocks suggesting a calendar, not recorded observations.</desc>
+  <rect width="600" height="400" fill="#edf0f7"/>
+  <rect x="48" y="42" width="504" height="316" rx="16" fill="#f9fbff"/>
+  <g fill="#dbe1ef">
+    <path d="M80 80H520V90H80Z"/>
+    <rect x="80" y="116" width="72" height="55" rx="6"/><rect x="172" y="116" width="72" height="55" rx="6"/><rect x="264" y="116" width="72" height="55" rx="6"/><rect x="356" y="116" width="72" height="55" rx="6"/><rect x="448" y="116" width="72" height="55" rx="6"/>
+    <rect x="80" y="190" width="72" height="55" rx="6"/><rect x="172" y="190" width="72" height="55" rx="6"/><rect x="264" y="190" width="72" height="55" rx="6"/><rect x="356" y="190" width="72" height="55" rx="6"/><rect x="448" y="190" width="72" height="55" rx="6"/>
+    <rect x="80" y="264" width="72" height="55" rx="6"/><rect x="172" y="264" width="72" height="55" rx="6"/><rect x="264" y="264" width="72" height="55" rx="6"/><rect x="356" y="264" width="72" height="55" rx="6"/><rect x="448" y="264" width="72" height="55" rx="6"/>
+  </g>
+  <g fill="#6276a7">
+    <rect x="172" y="116" width="72" height="55" rx="6"/><rect x="356" y="116" width="72" height="55" rx="6"/>
+    <rect x="80" y="190" width="72" height="55" rx="6"/><rect x="264" y="190" width="72" height="55" rx="6"/>
+    <rect x="172" y="264" width="72" height="55" rx="6"/><rect x="448" y="264" width="72" height="55" rx="6"/>
+  </g>
+  <circle cx="392" cy="291" r="12" fill="#b78334"/>
+</svg>
