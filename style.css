@@ -60,7 +60,15 @@ input, textarea, button, select { font: inherit; }
   font-weight: 500;
   margin-left: 0.6em;
 }
-.theme-label { display: flex; gap: 0.5rem; align-items: center; font-size: 0.85rem; }
+.theme-label {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  font-size: 0.85rem;
+}
 select {
   border: 1px solid var(--border);
   border-radius: 0.4rem;
@@ -223,7 +231,9 @@ footer {
 }
 
 @media (max-width: 42rem) {
-  .hero { grid-template-columns: 1fr; gap: 1.5rem; }
+  /* Reserve room for the absolutely positioned theme switch on small screens. */
+  .site-header { padding-block-start: 2.5rem; }
+  .hero { grid-template-columns: minmax(0, 1fr); gap: 1.5rem; }
   .learning-grid, .resume-section { grid-template-columns: 1fr; }
   .resume-section { gap: 1rem; }
   form { grid-template-columns: 1fr; }

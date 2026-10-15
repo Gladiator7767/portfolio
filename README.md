@@ -1,13 +1,13 @@
 # Yifeng Zheng: Personal site and portfolio
 
-A static course portfolio for [DSC 106 Lab 1](https://dsc106.com/labs/lab01/) and [Lab 2](https://dsc106.com/labs/lab02/), built with HTML, CSS, and browser-native JavaScript. No framework, npm package, or build step is required.
+A static course portfolio for [DSC 106 Lab 1](https://dsc106.com/labs/lab01/), [Lab 2](https://dsc106.com/labs/lab02/), and [Lab 3](https://dsc106.com/labs/lab03/), built with HTML, CSS, and browser-native JavaScript. No framework, npm package, or build step is required.
 
 ## Pages
 
 - **Home**: introduction and a decorative data-inspired illustration.
 - **Projects**: twelve clearly labeled fictional project concepts, each with a heading, decorative image, and description.
 - **Resume**: a fictionalized resume using sections, articles, lists, links, and machine-readable dates.
-- **Contact**: the lab's native HTML email form.
+- **Contact**: an email draft form with JavaScript encoding for the subject and message.
 
 The resume uses the author's real name and university, University of California San Diego (UCSD). For privacy, other resume details, including dates, coursework, experience, and skills, are illustrative. The project concepts are examples, not completed projects. The GitHub profile also identifies the author.
 
@@ -25,7 +25,9 @@ Press Ctrl+C to stop that server. Use an HTTP URL so the JavaScript module loads
 
 ## How it works
 
-`style.css` contains shared styling and responsive layouts. Each HTML page includes its own navigation with relative site links. `global.js` adds an optional Automatic / Light / Dark theme switch and saves that choice in local storage; navigation and the contact form work independently of JavaScript.
+`style.css` contains shared styling and responsive layouts. Every page loads `global.js` as an ES module. The module generates one shared navigation menu from a page array, marks the current page, and opens the external GitHub link in a new tab. Internal URLs resolve relative to the module, so the same code works at a local server root, WebStorm's project path, or GitHub Pages' repository path. Both directory URLs and explicit `index.html` URLs identify the current page.
+
+JavaScript also creates an Automatic / Light / Dark switch at the top right. The CSS `color-scheme` follows the OS in Automatic mode. A shared function updates the page and selected option, and the `colorScheme` preference is restored from local storage across refreshes and navigation. If storage is unavailable, switching the current page still works. Borders and hover backgrounds adapt to both themes.
 
 Lab 2 connects the CSS ideas from class to four layouts:
 
@@ -38,7 +40,9 @@ All four locally authored SVGs in `images/` are decorative illustrations and do 
 
 Use a current browser with CSS subgrid and `light-dark()` support, such as the Chrome version used in class. Resize the browser window to see the layout change; zooming is a different action.
 
-The contact form uses the owner's chosen contact address, `mailto:arthurzheng776721647@gmail.com`, with `method="post"` and `enctype="text/plain"`. Submitting opens the visitor's configured email application with a draft. The visitor reviews and sends it from that application; this website does not send mail automatically. The prefilled sender, subject, and message are examples that visitors can replace.
+The optional Lab 3 contact improvement uses the owner's chosen contact address, `mailto:arthurzheng776721647@gmail.com`. Its JavaScript submit handler reads `FormData`, encodes each subject/message field using `encodeURIComponent()`, and opens the resulting draft URL. The redundant sender field has been removed, since the visitor sends from their own mail application. The visitor reviews and sends the draft there; this website does not send mail automatically. The prefilled subject and message are examples that visitors can replace.
+
+The HTML form retains a native GET fallback if JavaScript is disabled, though clients may interpret its spaces differently. The shared navigation and theme control are JavaScript-generated as required by Lab 3; enable JavaScript to use them.
 
 ## Publication
 
