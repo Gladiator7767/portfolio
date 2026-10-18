@@ -50,4 +50,6 @@ The HTML form retains a native GET fallback if JavaScript is disabled, though cl
 
 ## Publication
 
+Scripts and styles use the shared `?v=4` release suffix so a browser with cached Lab 3 files loads the Lab 4 modules together. Keep the HTML script URLs and module imports consistent when changing this suffix in a later release.
+
 This folder can be published with GitHub Pages using the `main` branch and repository root. Pages needs no custom build configuration for this site. Source files were prepared with AI assistance and should be understood and reviewed as part of the course exercise.
