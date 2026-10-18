@@ -7,6 +7,7 @@
   <title>Yifeng Zheng: Personal site and portfolio</title>
   <link rel="stylesheet" href="style.css">
   <script src="global.js" type="module"></script>
+  <script src="index.js" type="module" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to main content</a>
@@ -20,22 +21,48 @@
         <p class="eyebrow">Data / Design / Learning</p>
         <h1 id="intro-title">Yifeng Zheng</h1>
         <p class="lede">Hi, I'm Yifeng. I am learning to build accessible webpages and communicate ideas through data visualization.</p>
-        <p>This personal website is my DSC 106 course portfolio. The resume and project concepts use fictional example details for this exercise.</p>
-        <a class="button-link" href="projects/">Explore project concepts →</a>
+        <p>This is my DSC 106 course portfolio. It includes coursework and clearly labeled fictional project concepts. The resume uses example details.</p>
+        <a class="button-link" href="projects/">Explore projects →</a>
       </div>
       <figure>
         <img src="images/data-illustration.svg" alt="A data-inspired illustration of green bars and gold dots on a pale green grid" width="640" height="440">
         <figcaption>An illustration inspired by data visualization.</figcaption>
       </figure>
     </section>
+    <section class="home-section" aria-labelledby="github-title">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">From GitHub</p>
+          <h2 id="github-title">My GitHub activity</h2>
+        </div>
+        <button class="secondary-button" id="refresh-stats" type="button">Refresh stats</button>
+      </div>
+      <p class="section-note">Public profile: <a href="https://github.com/Gladiator7767" target="_blank" rel="noopener noreferrer">Gladiator7767 ↗</a></p>
+      <div id="profile-stats" aria-live="polite">
+        <p class="data-status">Loading GitHub stats…</p>
+      </div>
+      <noscript><p>Enable JavaScript to load GitHub stats and project cards.</p></noscript>
+    </section>
+    <section class="home-section" aria-labelledby="latest-title">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Coursework</p>
+          <h2 id="latest-title">Latest Projects</h2>
+        </div>
+        <a href="projects/">View all projects →</a>
+      </div>
+      <div class="projects" aria-live="polite">
+        <p class="data-status">Loading projects…</p>
+      </div>
+    </section>
     <section aria-labelledby="explore-title">
       <p class="eyebrow">Explore the site</p>
       <h2 id="explore-title">Ideas, background, and contact</h2>
       <div class="learning-grid">
         <article>
-          <h3>Project concepts</h3>
-          <p>Twelve fictional project ideas explore how visualizations could make everyday questions easier to understand.</p>
-          <a href="projects/">Browse the concepts →</a>
+          <h3>Coursework and concepts</h3>
+          <p>Explore course assignments and fictional ideas for answering everyday questions with data. Sample projects and years are labeled.</p>
+          <a href="projects/">Browse the projects →</a>
         </article>
         <article>
           <h3>Example resume</h3>

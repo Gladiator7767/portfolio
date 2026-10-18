@@ -1,0 +1,130 @@
+[
+  {
+    "id": "portfolio-project",
+    "title": "DSC 106 Portfolio",
+    "year": 2026,
+    "image": "images/routes.svg",
+    "description": "Build a personal course website with HTML, CSS, and JavaScript, including responsive project cards, shared navigation, and a saved theme choice.",
+    "kind": "Coursework"
+  },
+  {
+    "id": "grocery-processing-project",
+    "title": "Food Processing Across Grocery Stores",
+    "year": 2026,
+    "image": "images/comparison.svg",
+    "description": "Compare the share of foods predicted to be ultra-processed at Target, Walmart, and Whole Foods. Using the same food-category mix shows how much the stores' differences depend on the categories in the data.",
+    "kind": "Coursework"
+  },
+  {
+    "id": "poverty-project",
+    "title": "Poverty Rates and Headcounts",
+    "year": 2026,
+    "image": "images/weekly-pattern.svg",
+    "description": "Compare poverty rates and estimated numbers of people in poverty in Sub-Saharan Africa from 1990 to 2018. This ongoing group project explores how the choice of measure changes the argument about progress.",
+    "kind": "In progress"
+  },
+  {
+    "id": "mobility-project",
+    "title": "Campus Mobility Dashboard",
+    "year": 2025,
+    "image": "images/routes.svg",
+    "description": "Compare walking, cycling, and shuttle trips around a fictional campus. A map and travel-time filters could help students plan a route.",
+    "kind": "Fictional concept",
+    "link": {
+      "url": "resume/#mobility-project",
+      "label": "See the sample resume entry."
+    }
+  },
+  {
+    "id": "reading-project",
+    "title": "Reading Habits Explorer",
+    "year": 2025,
+    "image": "images/weekly-pattern.svg",
+    "description": "Explore a fictional reading log by week and genre. Missing entries would stay separate from days with no reading.",
+    "kind": "Fictional concept",
+    "link": {
+      "url": "resume/#reading-project",
+      "label": "See the sample resume entry."
+    }
+  },
+  {
+    "id": "study-spaces-project",
+    "title": "Study Spaces",
+    "year": 2025,
+    "image": "images/comparison.svg",
+    "description": "Compare fictional study spots by noise, seating, and opening hours. The idea is to help someone find a place that fits a quiet afternoon or a group session.",
+    "kind": "Fictional concept"
+  },
+  {
+    "id": "campus-energy-project",
+    "title": "A Week of Campus Energy Use",
+    "year": 2025,
+    "image": "images/weekly-pattern.svg",
+    "description": "Use a simulated building log to explore weekday and weekend energy use. Compare patterns while keeping units and measurement periods consistent.",
+    "kind": "Fictional concept"
+  },
+  {
+    "id": "grocery-basket-project",
+    "title": "Grocery Basket Comparisons",
+    "year": 2024,
+    "image": "images/comparison.svg",
+    "description": "Compare the cost of the same fictional grocery basket across stores. Matching package sizes would help separate price differences from differences in quantity.",
+    "kind": "Fictional concept"
+  },
+  {
+    "id": "walking-routes-project",
+    "title": "Walking Routes",
+    "year": 2024,
+    "image": "images/routes.svg",
+    "description": "Sketch several routes between fictional campus landmarks. Let readers compare distance, stairs, and shaded sections before choosing a walk.",
+    "kind": "Fictional concept"
+  },
+  {
+    "id": "music-project",
+    "title": "Music Through the Week",
+    "year": 2024,
+    "image": "images/weekly-pattern.svg",
+    "description": "Explore a made-up listening history by day and genre. A weekly view could show when listening happens without treating longer listening time as better.",
+    "kind": "Fictional concept"
+  },
+  {
+    "id": "lunch-wait-project",
+    "title": "Wait Times at Lunch",
+    "year": 2024,
+    "image": "images/comparison.svg",
+    "description": "Use simulated observations to compare lunch queues. Show the range of waiting times alongside a typical wait so that variation stays visible.",
+    "kind": "Fictional concept"
+  },
+  {
+    "id": "weekend-places-project",
+    "title": "Weekend Places to Explore",
+    "year": 2023,
+    "image": "images/routes.svg",
+    "description": "Arrange fictional parks, libraries, and museums on a simple map. Filters for travel time and cost could help someone plan a short trip.",
+    "kind": "Fictional concept"
+  },
+  {
+    "id": "sleep-study-project",
+    "title": "Sleep and Study Logs",
+    "year": 2023,
+    "image": "images/weekly-pattern.svg",
+    "description": "Display a fictional diary of sleep and study hours. Compare patterns across days while making clear that a pattern alone does not establish a cause.",
+    "kind": "Fictional concept"
+  },
+  {
+    "id": "course-workloads-project",
+    "title": "Comparing Course Workloads",
+    "year": 2023,
+    "image": "images/comparison.svg",
+    "description": "Compare made-up weekly time estimates for reading, practice, and projects. Keep the same scale across courses so readers can judge the differences directly.",
+    "kind": "Fictional concept"
+  },
+  {
+    "id": "bike-rack-project",
+    "title": "Finding a Bike Rack",
+    "year": 2023,
+    "image": "images/routes.svg",
+    "description": "Map fictional bike racks and sample availability reports. Show when each report was recorded so an old observation is not mistaken for current availability.",
+    "kind": "Fictional concept"
+  }
+]

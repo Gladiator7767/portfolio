@@ -7,6 +7,7 @@
   <title>Projects · Yifeng Zheng</title>
   <link rel="stylesheet" href="../style.css">
   <script src="../global.js" type="module"></script>
+  <script src="projects.js" type="module"></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to main content</a>
@@ -15,72 +16,13 @@
     <div id="theme-control"></div>
   </header>
   <main id="main">
-    <p class="eyebrow">Fictional project concepts</p>
-    <h1>Projects</h1>
-    <p class="lede">Twelve ideas for exploring everyday questions with data.</p>
-    <p class="notice">Fictional concepts for a course exercise, not completed projects. The illustrations are decorative and do not show collected data.</p>
-    <div class="projects">
-      <article id="mobility-project">
-        <h2>Campus Mobility Dashboard</h2>
-        <img src="../images/routes.svg" alt="" width="600" height="400">
-        <p>Compare walking, cycling, and shuttle trips around a fictional campus. A map and travel-time filters could help students plan a route. <a href="../resume/#mobility-project">See the sample resume entry.</a></p>
-      </article>
-      <article id="reading-project">
-        <h2>Reading Habits Explorer</h2>
-        <img src="../images/weekly-pattern.svg" alt="" width="600" height="400">
-        <p>Explore a fictional reading log by week and genre. Missing entries would stay separate from days with no reading. <a href="../resume/#reading-project">See the sample resume entry.</a></p>
-      </article>
-      <article>
-        <h2>Study Spaces</h2>
-        <img src="../images/comparison.svg" alt="" width="600" height="400">
-        <p>Compare fictional study spots by noise, seating, and opening hours. The idea is to help someone find a place that fits a quiet afternoon or a group session.</p>
-      </article>
-      <article>
-        <h2>A Week of Campus Energy Use</h2>
-        <img src="../images/weekly-pattern.svg" alt="" width="600" height="400" loading="lazy">
-        <p>Use a simulated building log to explore weekday and weekend energy use. Compare patterns while keeping units and measurement periods consistent.</p>
-      </article>
-      <article>
-        <h2>Grocery Basket Comparisons</h2>
-        <img src="../images/comparison.svg" alt="" width="600" height="400" loading="lazy">
-        <p>Compare the cost of the same fictional grocery basket across stores. Matching package sizes would help separate price differences from differences in quantity.</p>
-      </article>
-      <article>
-        <h2>Walking Routes</h2>
-        <img src="../images/routes.svg" alt="" width="600" height="400" loading="lazy">
-        <p>Sketch several routes between fictional campus landmarks. Let readers compare distance, stairs, and shaded sections before choosing a walk.</p>
-      </article>
-      <article>
-        <h2>Music Through the Week</h2>
-        <img src="../images/weekly-pattern.svg" alt="" width="600" height="400" loading="lazy">
-        <p>Explore a made-up listening history by day and genre. A weekly view could show when listening happens without treating longer listening time as better.</p>
-      </article>
-      <article>
-        <h2>Wait Times at Lunch</h2>
-        <img src="../images/comparison.svg" alt="" width="600" height="400" loading="lazy">
-        <p>Use simulated observations to compare lunch queues. Show the range of waiting times alongside a typical wait so that variation stays visible.</p>
-      </article>
-      <article>
-        <h2>Weekend Places to Explore</h2>
-        <img src="../images/routes.svg" alt="" width="600" height="400" loading="lazy">
-        <p>Arrange fictional parks, libraries, and museums on a simple map. Filters for travel time and cost could help someone plan a short trip.</p>
-      </article>
-      <article>
-        <h2>Sleep and Study Logs</h2>
-        <img src="../images/weekly-pattern.svg" alt="" width="600" height="400" loading="lazy">
-        <p>Display a fictional diary of sleep and study hours. Compare patterns across days while making clear that a pattern alone does not establish a cause.</p>
-      </article>
-      <article>
-        <h2>Comparing Course Workloads</h2>
-        <img src="../images/comparison.svg" alt="" width="600" height="400" loading="lazy">
-        <p>Compare made-up weekly time estimates for reading, practice, and projects. Keep the same scale across courses so readers can judge the differences directly.</p>
-      </article>
-      <article>
-        <h2>Finding a Bike Rack</h2>
-        <img src="../images/routes.svg" alt="" width="600" height="400" loading="lazy">
-        <p>Map fictional bike racks and sample availability reports. Show when each report was recorded so an old observation is not mistaken for current availability.</p>
-      </article>
-    </div>
+    <p class="eyebrow">Coursework and project ideas</p>
+    <h1 class="projects-title">Projects</h1>
+    <p class="lede">Course projects, work in progress, and ideas for exploring everyday questions with data.</p>
+    <p class="notice">The first three entries are coursework. Entries labeled "Fictional concept" are examples, not completed projects; their 2023-2025 dates are sample years. All illustrations are decorative and do not show collected data.</p>
+    <p id="projects-status" class="status-message" role="status">Loading projects...</p>
+    <div class="projects" aria-busy="true"></div>
+    <noscript><p class="notice">JavaScript is needed to load the project cards from their data file. Please enable it and reload this page.</p></noscript>
   </main>
   <footer>Yifeng Zheng · DSC 106 course portfolio</footer>
 </body>

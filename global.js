@@ -100,3 +100,78 @@ contactForm?.addEventListener('submit', (event) => {
   location.href = createMailtoURL(contactForm.action, data);
 });
 
+// Lab 4: both local JSON files and public APIs use the same loading function.
+// Let the calling page decide which error message belongs in its container.
+export async function fetchJSON(url) {
+  try {
+    const response = await fetch(url);
+    if (!response.ok) {
+      throw new Error(`Could not load data (${response.status} ${response.statusText}).`);
+    }
+    return await response.json();
+  } catch (error) {
+    console.error('Error fetching or parsing JSON:', error);
+    throw error;
+  }
+}
+
+function escapeHTML(value) {
+  const replacements = { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' };
+  return String(value ?? '').replace(/[&<>"']/g, (character) => replacements[character]);
+}
+
+function projectURL(path) {
+  // JSON stores site-relative paths so Home and Projects share the same data.
+  const url = new URL(path, BASE_URL);
+  if (!['http:', 'https:'].includes(url.protocol)) {
+    throw new Error('Project links and images must use HTTP or HTTPS.');
+  }
+  return url.href;
+}
+
+export function renderProjects(projects, containerElement, headingLevel = 'h2') {
+  if (!(containerElement instanceof Element)) {
+    throw new TypeError('A projects container is required.');
+  }
+  if (!Array.isArray(projects)) {
+    throw new TypeError('Project data must be an array.');
+  }
+  if (!/^h[1-6]$/.test(headingLevel)) {
+    throw new TypeError('Use a heading level from h1 to h6.');
+  }
+
+  // Clearing first means a second render replaces cards instead of duplicating them.
+  containerElement.innerHTML = '';
+  if (projects.length === 0) {
+    containerElement.innerHTML = '<p class="data-status">No projects to show yet.</p>';
+    return;
+  }
+
+  for (const project of projects) {
+    const article = document.createElement('article');
+    if (project.id) article.id = project.id;
+    const title = escapeHTML(project.title || 'Untitled project');
+    const image = escapeHTML(projectURL(project.image || 'images/data-illustration.svg'));
+    const year = Number.isInteger(project.year) ? project.year : 'Year not listed';
+    const kind = project.kind || 'Project';
+    const yearLabel = kind === 'Fictional concept' ? `Sample year: ${year}` : year;
+    const link = project.link
+      ? ` <a href="${escapeHTML(projectURL(project.link.url))}">${escapeHTML(project.link.label)}</a>`
+      : '';
+
+    article.innerHTML = `
+      <${headingLevel}>${title}</${headingLevel}>
+      <img src="${image}" alt="" width="600" height="400" loading="lazy">
+      <div class="project-details">
+        <p>${escapeHTML(project.description || 'Description coming soon.')}${link}</p>
+        <p class="project-meta">${escapeHTML(kind)} · ${escapeHTML(yearLabel)}</p>
+      </div>
+    `;
+    containerElement.appendChild(article);
+  }
+}
+
+export async function fetchGitHubData(username) {
+  return fetchJSON(`https://api.github.com/users/${encodeURIComponent(username)}`);
+}
+

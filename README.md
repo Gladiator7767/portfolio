@@ -1,15 +1,15 @@
 # Yifeng Zheng: Personal site and portfolio
 
-A static course portfolio for [DSC 106 Lab 1](https://dsc106.com/labs/lab01/), [Lab 2](https://dsc106.com/labs/lab02/), and [Lab 3](https://dsc106.com/labs/lab03/), built with HTML, CSS, and browser-native JavaScript. No framework, npm package, or build step is required.
+A course portfolio for [DSC 106 Lab 1](https://dsc106.com/labs/lab01/), [Lab 2](https://dsc106.com/labs/lab02/), [Lab 3](https://dsc106.com/labs/lab03/), and [Lab 4](https://dsc106.com/labs/lab04/), built with HTML, CSS, and browser-native JavaScript. No framework, npm package, or build step is required.
 
 ## Pages
 
-- **Home**: introduction and a decorative data-inspired illustration.
-- **Projects**: twelve clearly labeled fictional project concepts, each with a heading, decorative image, and description.
+- **Home**: introduction, live public GitHub stats, and the first three projects from the shared JSON file.
+- **Projects**: an automatically counted list of coursework and twelve clearly labeled fictional concepts. All entries have a title, decorative image, description, and year.
 - **Resume**: a fictionalized resume using sections, articles, lists, links, and machine-readable dates.
 - **Contact**: an email draft form with JavaScript encoding for the subject and message.
 
-The resume uses the author's real name and university, University of California San Diego (UCSD). For privacy, other resume details, including dates, coursework, experience, and skills, are illustrative. The project concepts are examples, not completed projects. The GitHub profile also identifies the author.
+The resume uses the author's real name and university, University of California San Diego (UCSD). For privacy, other resume details, including dates, coursework, experience, and skills, are illustrative. Fictional project concepts and their sample years are explicitly labeled. Coursework is listed separately, and the ongoing poverty project is marked in progress. The GitHub profile also identifies the author.
 
 ## Preview locally
 
@@ -37,6 +37,10 @@ Lab 2 connects the CSS ideas from class to four layouts:
 - **Resume**: aligned section headings and content, with smaller muted dates and consistent list spacing. At narrow widths, the resume and contact form stack vertically.
 
 All four locally authored SVGs in `images/` are decorative illustrations and do not represent measured datasets. Project images use empty alt text because the adjacent heading and description carry the content.
+
+Lab 4 separates the project data into `lib/projects.json`. Keep the newest coursework first: the homepage uses `slice(0, 3)` rather than sorting by year. `global.js` exports `fetchJSON`, `renderProjects`, and `fetchGitHubData`. The homepage's `index.js` and the Projects page's `projects.js` reuse those functions. Image and link paths in the JSON are relative to the site root; the renderer resolves them from `global.js`, so they also work on nested routes and GitHub Pages. Every article still spans three subgrid rows: heading, image, and details. Project years and status are inside the details row.
+
+The GitHub panel reads the public `Gladiator7767` profile without a token. Counts are fetched on load and when **Refresh stats** is pressed. Unavailable data displays an error message rather than invented counts; local project loading runs separately. The Projects title uses the JSON array length and never reports zero merely because a fetch failed. API counts may change over time. The lab's following/followers activity must be completed with classmates; the site does not follow accounts or manufacture followers.
 
 Use a current browser with CSS subgrid and `light-dark()` support, such as the Chrome version used in class. Resize the browser window to see the layout change; zooming is a different action.
 
