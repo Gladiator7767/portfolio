@@ -1,11 +1,11 @@
 # Yifeng Zheng: Personal site and portfolio
 
-A course portfolio for [DSC 106 Lab 1](https://dsc106.com/labs/lab01/), [Lab 2](https://dsc106.com/labs/lab02/), [Lab 3](https://dsc106.com/labs/lab03/), and [Lab 4](https://dsc106.com/labs/lab04/), built with HTML, CSS, and browser-native JavaScript. No framework, npm package, or build step is required.
+A course portfolio for [DSC 106 Lab 1](https://dsc106.com/labs/lab01/), [Lab 2](https://dsc106.com/labs/lab02/), [Lab 3](https://dsc106.com/labs/lab03/), [Lab 4](https://dsc106.com/labs/lab04/), and [Lab 5](https://dsc106.com/labs/lab05/), built with HTML, CSS, and browser-native JavaScript. Lab 5 imports D3 7.9.0 from jsDelivr. No framework, local npm package, or build step is required.
 
 ## Pages
 
 - **Home**: introduction, live public GitHub stats, and the first three projects from the shared JSON file.
-- **Projects**: an automatically counted list of coursework and twelve clearly labeled fictional concepts. All entries have a title, decorative image, description, and year.
+- **Projects**: an automatically counted list of coursework and twelve clearly labeled fictional concepts, with a D3 pie chart of projects by year. Search across metadata and select a year using a slice or legend button. Both filters work together in either order. All entries have a title, decorative image, description, and year.
 - **Resume**: a fictionalized resume using sections, articles, lists, links, and machine-readable dates.
 - **Contact**: an email draft form with JavaScript encoding for the subject and message.
 
@@ -50,6 +50,8 @@ The HTML form retains a native GET fallback if JavaScript is disabled, though cl
 
 ## Publication
 
-Scripts and styles use the shared `?v=4` release suffix so a browser with cached Lab 3 files loads the Lab 4 modules together. Keep the HTML script URLs and module imports consistent when changing this suffix in a later release.
+Scripts and styles use the shared `?v=5` release suffix so a browser with cached Lab 4 files loads the Lab 5 modules together. Keep the HTML script URLs and module imports consistent when changing this suffix in a later release.
+
+The Projects chart uses D3 `rollups`, `pie`, `arc`, and an ordinal color scale. Its counts summarize the current search results. The selected year additionally filters the cards, while other matching years remain available for switching. The status text distinguishes visible cards from search matches. Year identity and colors remain stable when a query removes a category; selected slices and legend buttons stay synchronized. Keyboard users can activate slices with Enter or Space and use the native legend buttons. Clearing filters restores the full dataset, including after an empty result.
 
 This folder can be published with GitHub Pages using the `main` branch and repository root. Pages needs no custom build configuration for this site. Source files were prepared with AI assistance and should be understood and reviewed as part of the course exercise.

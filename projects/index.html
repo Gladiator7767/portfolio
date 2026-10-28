@@ -5,9 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="color-scheme" content="light dark">
   <title>Projects · Yifeng Zheng</title>
-  <link rel="stylesheet" href="../style.css?v=4">
-  <script src="../global.js?v=4" type="module"></script>
-  <script src="projects.js?v=4" type="module"></script>
+  <link rel="stylesheet" href="../style.css?v=5">
+  <script src="../global.js?v=5" type="module"></script>
+  <script src="projects.js?v=5" type="module"></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to main content</a>
@@ -20,6 +20,23 @@
     <h1 class="projects-title">Projects</h1>
     <p class="lede">Course projects, work in progress, and ideas for exploring everyday questions with data.</p>
     <p class="notice">The first three entries are coursework. Entries labeled "Fictional concept" are examples, not completed projects; their 2023-2025 dates are sample years. All illustrations are decorative and do not show collected data.</p>
+    <section class="project-explorer" aria-labelledby="projects-chart-heading" hidden>
+      <h2 id="projects-chart-heading">Projects by year</h2>
+      <p id="chart-description" class="section-note">The chart counts search results by year. Choose a slice or a year to filter the cards; choose it again to show all matching years.</p>
+      <div class="project-chart-layout">
+        <svg id="projects-pie-plot" viewBox="-55 -55 110 110" role="group" aria-labelledby="projects-chart-heading" aria-describedby="chart-description"></svg>
+        <ul class="legend" aria-label="Filter projects by year"></ul>
+      </div>
+      <p id="chart-empty" class="section-note" hidden>No matching years to show.</p>
+      <div class="project-search-controls">
+        <label class="project-search-label" for="project-search">Search projects
+          <input id="project-search" class="searchBar" type="search" placeholder="Search titles, descriptions, years..." aria-describedby="project-search-help" autocomplete="off">
+        </label>
+        <button id="clear-project-filters" class="secondary-button" type="button" disabled>Clear filters</button>
+      </div>
+      <p id="project-search-help" class="section-note">Search ignores capitalization. Search and the selected year work together.</p>
+      <p id="project-filter-summary" class="filter-summary" role="status" aria-live="polite" aria-atomic="true"></p>
+    </section>
     <p id="projects-status" class="status-message" role="status">Loading projects...</p>
     <div class="projects" aria-busy="true"></div>
     <noscript><p class="notice">JavaScript is needed to load the project cards from their data file. Please enable it and reload this page.</p></noscript>

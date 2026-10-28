@@ -172,6 +172,79 @@ figcaption { color: var(--muted); font-size: 0.78rem; margin-top: 0.7rem; }
 .projects p { color: var(--muted); margin: 0; }
 .project-details { display: flex; flex-direction: column; gap: 1rem; }
 .projects .project-meta { margin-top: auto; font-size: 0.78rem; color: var(--color-accent); }
+.project-explorer {
+  --selected-year-color: light-dark(#a329a8, #f098f5);
+  margin-block: 2rem;
+}
+.project-explorer h2 { margin-bottom: 0.5rem; }
+.project-chart-layout {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: clamp(1rem, 4vw, 3rem);
+  margin-block: 1rem 1.5rem;
+}
+#projects-pie-plot {
+  display: block;
+  flex: 0 1 15rem;
+  width: min(100%, 15rem);
+  max-width: 100%;
+  aspect-ratio: 1;
+  overflow: visible;
+}
+#projects-pie-plot[hidden] { display: none; }
+.pie-slice {
+  stroke: light-dark(#f9fbf8, #15201c);
+  stroke-width: 0.7;
+  cursor: pointer;
+  transition: opacity 180ms, fill 180ms;
+}
+#projects-pie-plot:has(.pie-slice:hover) .pie-slice:not(:hover) { opacity: 0.45; }
+.pie-slice.selected { fill: var(--selected-year-color); stroke: CanvasText; stroke-width: 1.1; }
+.pie-slice:focus-visible { outline: none; stroke: CanvasText; stroke-width: 2; }
+.legend {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 10rem), 1fr));
+  gap: 0.85rem;
+  flex: 1 1 22rem;
+  min-width: 0;
+  list-style: none;
+  padding: 1rem;
+  margin: 0;
+  border: 1px solid var(--border);
+  border-radius: 0.75rem;
+}
+.legend:empty { display: none; }
+.legend button {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.45rem;
+  width: 100%;
+  padding: 0.6rem;
+  border: 1px solid transparent;
+  border-radius: 0.4rem;
+  background: transparent;
+  color: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+.legend button:hover { background: var(--surface); }
+.swatch { width: 1rem; aspect-ratio: 1; border-radius: 0.2rem; background: var(--color); flex: none; }
+.year-count { color: var(--muted); }
+.legend .selected { --color: var(--selected-year-color) !important; }
+.legend .selected button { border-color: var(--selected-year-color); background: var(--surface); }
+.selection-label { font-size: 0.75rem; font-weight: 700; color: var(--color-accent); }
+.selection-label:empty { display: none; }
+.project-search-controls { display: flex; flex-wrap: wrap; align-items: end; gap: 1rem; }
+.project-search-label { display: grid; gap: 0.4rem; flex: 1 1 20rem; max-width: 40rem; }
+.project-search-controls button { min-height: 2.85rem; }
+.project-search-controls button:disabled { cursor: default; }
+.project-explorer .section-note { margin-block: 0.5rem; }
+.filter-summary { font-weight: 600; }
+@media (prefers-reduced-motion: reduce) {
+  .pie-slice { transition: none; }
+}
 .data-status { grid-column: 1 / -1; color: var(--muted); }
 .home-section { margin-bottom: 3rem; }
 .home-section .projects { grid-template-columns: repeat(auto-fit, minmax(min(100%, 15em), 1fr)); }
