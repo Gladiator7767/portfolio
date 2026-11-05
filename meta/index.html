@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="light dark">
+  <title>Meta · Yifeng Zheng</title>
+  <link rel="stylesheet" href="../style.css?v=6">
+  <link rel="stylesheet" href="meta.css?v=6">
+  <script src="../global.js?v=6" type="module"></script>
+  <script src="main.js?v=6" type="module"></script>
+</head>
+<body class="meta-page">
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <header class="site-header">
+    <a class="brand" href="../">YIFENG ZHENG <span>DSC 106 / Course portfolio</span></a>
+    <div id="theme-control"></div>
+  </header>
+  <main id="main">
+    <p class="eyebrow">Lab 6 · Quantitative data with D3</p>
+    <h1>Meta</h1>
+    <p class="meta-intro">This page showcases the code behind this website, including when I made the commits and which programming languages were involved in these commits.</p>
+    <p id="data-status" class="section-note" role="status">Loading code statistics…</p>
+    <section aria-label="Code summary" id="summary-section" hidden>
+      <div id="stats"></div>
+    </section>
+    <section id="commit-explorer" aria-labelledby="chart-title" hidden>
+      <div class="meta-chart-heading">
+        <h2 id="chart-title">Commits by date and time</h2>
+        <div id="size-legend" aria-label="Circle size legend"></div>
+      </div>
+      <p id="chart-help" class="section-note">By moving the mouse over the points, you can view the details. Drag a box starting in the blank area in the figure to select multiple commits. The time is displayed according to the time zone when the commit was recorded and will not change depending on the viewer's time zone.</p>
+      <div class="meta-explorer-layout">
+        <div class="meta-chart-scroll" tabindex="0" aria-label="Scrollable commit chart">
+          <div id="chart"></div>
+        </div>
+        <aside class="meta-selection" aria-labelledby="selection-title">
+          <h3 id="selection-title">Selected commits</h3>
+          <p id="selection-count" role="status" aria-live="polite">No commits selected</p>
+          <button id="clear-selection" class="secondary-button" type="button" disabled>Clear selection</button>
+          <h4>Language breakdown</h4>
+          <p id="selection-help" class="section-note">Select dots to see their line counts by language.</p>
+          <dl id="language-breakdown" class="stats"></dl>
+        </aside>
+      </div>
+      <p class="section-note meta-data-note">The data here is based on the latest committed code version of the website, and only counts the lines of code that still exist in that version. The area of the circle represents the number of lines left by each commit, not the total number of lines changed at that time.</p>
+      <p class="section-note">Keyboard: Tab to a dot for details, Enter to reach its commit link, and Escape to close the details. <a href="loc.csv" download>Download the line data</a>.</p>
+    </section>
+    <noscript><p class="notice">JavaScript is needed to load the code data and draw this chart.</p></noscript>
+  </main>
+  <aside id="commit-tooltip" class="meta-tooltip" aria-label="Commit details" hidden>
+    <dl class="info">
+      <dt>Commit</dt><dd><a id="commit-link" target="_blank" rel="noopener noreferrer"></a></dd>
+      <dt>Date</dt><dd id="commit-date"></dd>
+      <dt>Time</dt><dd id="commit-time"></dd>
+      <dt>Author</dt><dd id="commit-author"></dd>
+      <dt>Retained lines</dt><dd id="commit-lines"></dd>
+    </dl>
+  </aside>
+  <footer>Yifeng Zheng · DSC 106 course portfolio</footer>
+</body>
+</html>

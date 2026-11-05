@@ -1,11 +1,12 @@
 # Yifeng Zheng: Personal site and portfolio
 
-A course portfolio for [DSC 106 Lab 1](https://dsc106.com/labs/lab01/), [Lab 2](https://dsc106.com/labs/lab02/), [Lab 3](https://dsc106.com/labs/lab03/), [Lab 4](https://dsc106.com/labs/lab04/), and [Lab 5](https://dsc106.com/labs/lab05/), built with HTML, CSS, and browser-native JavaScript. Lab 5 imports D3 7.9.0 from jsDelivr. No framework, local npm package, or build step is required.
+A course portfolio for DSC 106 Labs 1–6, built with HTML, CSS, and browser-native JavaScript. Labs 5 and 6 import D3 7.9.0 from jsDelivr. The browser needs no build step. Lab 6 uses the local development dependency `elocuent` to generate its saved CSV before publication.
 
 ## Pages
 
 - **Home**: introduction, live public GitHub stats, and the first three projects from the shared JSON file.
 - **Projects**: an automatically counted list of coursework and twelve clearly labeled fictional concepts, with a D3 pie chart of projects by year. Search across metadata and select a year using a slice or legend button. Both filters work together in either order. All entries have a title, decorative image, description, and year.
+- **Meta**: summary statistics and a date/time scatterplot of commits represented in the saved code snapshot. Hover for details; brush dots to compare their retained lines by language. Circle area represents retained line count.
 - **Resume**: a fictionalized resume using sections, articles, lists, links, and machine-readable dates.
 - **Contact**: an email draft form with JavaScript encoding for the subject and message.
 
@@ -50,8 +51,44 @@ The HTML form retains a native GET fallback if JavaScript is disabled, though cl
 
 ## Publication
 
-Scripts and styles use the shared `?v=5` release suffix so a browser with cached Lab 4 files loads the Lab 5 modules together. Keep the HTML script URLs and module imports consistent when changing this suffix in a later release.
+Scripts and styles use the shared `?v=6` release suffix so cached pages load the Lab 6 navigation and modules together. Keep the HTML script URLs and module imports consistent when changing this suffix in a later release.
 
 The Projects chart uses D3 `rollups`, `pie`, `arc`, and an ordinal color scale. Its counts summarize the current search results. The selected year additionally filters the cards, while other matching years remain available for switching. The status text distinguishes visible cards from search matches. Year identity and colors remain stable when a query removes a category; selected slices and legend buttons stay synchronized. Keyboard users can activate slices with Enter or Space and use the native legend buttons. Clearing filters restores the full dataset, including after an empty result.
 
 This folder can be published with GitHub Pages using the `main` branch and repository root. Pages needs no custom build configuration for this site. Source files were prepared with AI assistance and should be understood and reviewed as part of the course exercise.
+
+## Lab 6 data
+
+Official instructions: https://dsc106.com/labs/lab06/
+
+The CSV is generated with elocuent 0.0.4 after committing the website's source
+code. It attributes the surviving HTML/CSS/JavaScript lines to their commits
+using git blame. It is not a log of every historical edit or every commit.
+Blank lines are included. A subsequent data-only commit stores the CSV without
+changing the analyzed code.
+
+The x and y axes use the original date/time fields and UTC offset of each commit,
+so another viewer's time zone does not move the points. The radius scale starts
+at zero and uses a square root, keeping circle area proportional to line count.
+Large dots are painted first. Transparent hit targets make the smallest dots
+easier to inspect without enlarging their visible areas. The brush selects dot
+centers and updates both the count and the selected lines' language proportions.
+
+After committing future code changes, regenerate the data with Node and npm:
+
+```sh
+npm ci
+npm run analyze
+```
+
+`npm run analyze` invokes the course command
+`elocuent -d . -o meta/loc.csv --spaces 2`. Run it after saving a code commit,
+then include the updated CSV in the next commit before pushing. To avoid scanning
+dependencies or uncommitted edits, run elocuent on a clean snapshot of the code
+commit with its Git history and no node_modules directory; the executable can
+come from the main working folder. Keep `node_modules/` ignored;
+**do commit `meta/loc.csv`**.
+
+Lab 6 check-off is a voiced computer recording, MP4, at most 60 seconds:
+show the quantitative visualization, interact with it, then explicitly share
+the most interesting thing learned. No separate writeup is required by the lab page.

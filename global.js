@@ -10,6 +10,7 @@ const BASE_URL = new URL('./', import.meta.url);
 const pages = [
   { url: '', title: 'Home' },
   { url: 'projects/', title: 'Projects' },
+  { url: 'meta/', title: 'Meta' },
   { url: 'resume/', title: 'Resume' },
   { url: 'contact/', title: 'Contact' },
   { url: 'https://github.com/Gladiator7767', title: 'GitHub ↗' },

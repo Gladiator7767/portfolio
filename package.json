@@ -1,0 +1,12 @@
+{
+  "name": "yifeng-course-portfolio",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "analyze": "elocuent -d . -o meta/loc.csv --spaces 2"
+  },
+  "devDependencies": {
+    "elocuent": "^0.0.4"
+  }
+}
