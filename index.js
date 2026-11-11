@@ -1,4 +1,4 @@
-import { fetchJSON, renderProjects, fetchGitHubData } from './global.js?v=6';
+import { fetchJSON, renderProjects, fetchGitHubData } from './global.js?v=7';
 
 async function loadLatestProjects() {
   const container = document.querySelector('.projects');

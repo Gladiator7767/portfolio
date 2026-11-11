@@ -152,6 +152,9 @@ export function renderProjects(projects, containerElement, headingLevel = 'h2') 
     const article = document.createElement('article');
     if (project.id) article.id = project.id;
     const title = escapeHTML(project.title || 'Untitled project');
+    const titleMarkup = project.url
+      ? `<a href="${escapeHTML(projectURL(project.url))}">${title}</a>`
+      : title;
     const image = escapeHTML(projectURL(project.image || 'images/data-illustration.svg'));
     const year = Number.isInteger(project.year) ? project.year : 'Year not listed';
     const kind = project.kind || 'Project';
@@ -161,7 +164,7 @@ export function renderProjects(projects, containerElement, headingLevel = 'h2') 
       : '';
 
     article.innerHTML = `
-      <${headingLevel}>${title}</${headingLevel}>
+      <${headingLevel}>${titleMarkup}</${headingLevel}>
       <img src="${image}" alt="" width="600" height="400" loading="lazy">
       <div class="project-details">
         <p>${escapeHTML(project.description || 'Description coming soon.')}${link}</p>

@@ -1,5 +1,14 @@
 [
   {
+    "id": "bikewatching-project",
+    "title": "Bikewatching",
+    "year": 2026,
+    "image": "images/bikewatching.png",
+    "description": "Explore Bluebikes traffic in Boston and Cambridge during March 2024. Pan and zoom the map, inspect stations, and use the time slider to compare departures and arrivals throughout the day.",
+    "kind": "Coursework",
+    "url": "https://gladiator7767.github.io/bikewatching/"
+  },
+  {
     "id": "portfolio-project",
     "title": "DSC 106 Portfolio",
     "year": 2026,

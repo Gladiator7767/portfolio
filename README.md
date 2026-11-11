@@ -5,7 +5,7 @@ A course portfolio for DSC 106 Labs 1–6, built with HTML, CSS, and browser-nat
 ## Pages
 
 - **Home**: introduction, live public GitHub stats, and the first three projects from the shared JSON file.
-- **Projects**: an automatically counted list of coursework and twelve clearly labeled fictional concepts, with a D3 pie chart of projects by year. Search across metadata and select a year using a slice or legend button. Both filters work together in either order. All entries have a title, decorative image, description, and year.
+- **Projects**: an automatically counted list of coursework and twelve clearly labeled fictional concepts, with a D3 pie chart of projects by year. Search across metadata and select a year using a slice or legend button. Both filters work together in either order. All entries have a title, image, description, and year. Bikewatching includes an actual map screenshot and a link to its separate GitHub Pages website.
 - **Meta**: summary statistics and a date/time scatterplot of commits represented in the saved code snapshot. Hover for details; brush dots to compare their retained lines by language. Circle area represents retained line count.
 - **Resume**: a fictionalized resume using sections, articles, lists, links, and machine-readable dates.
 - **Contact**: an email draft form with JavaScript encoding for the subject and message.
