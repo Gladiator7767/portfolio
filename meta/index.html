@@ -5,10 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="color-scheme" content="light dark">
   <title>Meta · Yifeng Zheng</title>
+  <link rel="icon" href="data:,">
   <link rel="stylesheet" href="../style.css?v=6">
-  <link rel="stylesheet" href="meta.css?v=6">
+  <link rel="stylesheet" href="meta.css?v=8">
   <script src="../global.js?v=7" type="module"></script>
-  <script src="main.js?v=6" type="module"></script>
+  <script src="main.js?v=8" type="module"></script>
 </head>
 <body class="meta-page">
   <a class="skip-link" href="#main">Skip to main content</a>
@@ -17,7 +18,7 @@
     <div id="theme-control"></div>
   </header>
   <main id="main">
-    <p class="eyebrow">Lab 6 · Quantitative data with D3</p>
+    <p class="eyebrow">Lab 8 · Animation &amp; Scrollytelling</p>
     <h1>Meta</h1>
     <p class="meta-intro">This page showcases the code behind this website, including when I made the commits and which programming languages were involved in these commits.</p>
     <p id="data-status" class="section-note" role="status">Loading code statistics…</p>
@@ -25,26 +26,58 @@
       <div id="stats"></div>
     </section>
     <section id="commit-explorer" aria-labelledby="chart-title" hidden>
-      <div class="meta-chart-heading">
-        <h2 id="chart-title">Commits by date and time</h2>
-        <div id="size-legend" aria-label="Circle size legend"></div>
-      </div>
-      <p id="chart-help" class="section-note">By moving the mouse over the points, you can view the details. Drag a box starting in the blank area in the figure to select multiple commits. The time is displayed according to the time zone when the commit was recorded and will not change depending on the viewer's time zone.</p>
-      <div class="meta-explorer-layout">
-        <div class="meta-chart-scroll" tabindex="0" aria-label="Scrollable commit chart">
-          <div id="chart"></div>
+      <h2>A growing picture of the code</h2>
+      <p id="story-help">Scroll down the commit history, and the dots will appear in time order. Scroll up, and you can go back to an earlier time. You can also drag the time slider directly to see it.</p>
+      <details class="meta-help">
+        <summary>Chart controls and data notes</summary>
+        <p id="chart-help" class="section-note">By moving the mouse over the points, you can view the details. Drag a box starting in the blank area in the figure to select multiple commits. The time is displayed according to the time zone when the commit was recorded and will not change depending on the viewer's time zone. The filter's cutoff is shown in UTC.</p>
+        <p class="section-note meta-data-note">The data here is based on the saved committed code snapshot, and only counts the lines of code that still exist in that version. The area of the circle represents the number of lines left by each commit, not the total number of lines changed at that time.</p>
+        <p class="section-note">Keyboard: Tab to a dot for details, Enter to reach its commit link, and Escape to close the details. Use the arrow keys on the time slider. <a href="loc.csv" download>Download the line data</a>.</p>
+      </details>
+      <div id="scrolly-1">
+        <div id="scatter-story" aria-label="Commit story"></div>
+        <div id="scatter-plot">
+          <div class="meta-chart-heading">
+            <h2 id="chart-title">Commits by date and time</h2>
+            <div id="size-legend" aria-label="Circle size legend"></div>
+          </div>
+          <div class="time-controls">
+            <div class="time-label-row">
+              <label for="time-slider">Show commits through</label>
+              <time id="time-cutoff"></time>
+            </div>
+            <input id="time-slider" type="range" min="0" max="100" step="any" value="100" aria-describedby="time-progress">
+            <div class="time-status-row">
+              <p id="time-progress" role="status" aria-live="polite"></p>
+              <button id="show-all" class="secondary-button" type="button">Show all commits</button>
+              <a href="#file-explorer" class="jump-files">View file dots ↓</a>
+            </div>
+          </div>
+          <div class="meta-chart-scroll" tabindex="0" aria-label="Commit chart">
+            <div id="chart"></div>
+          </div>
+          <details class="meta-selection">
+            <summary id="selection-title">Selected commits and languages</summary>
+            <div class="selection-content">
+              <p id="selection-count" role="status" aria-live="polite">No commits selected</p>
+              <button id="clear-selection" class="secondary-button" type="button" disabled>Clear selection</button>
+              <h3>Language breakdown</h3>
+              <p id="selection-help" class="section-note">Select dots to see their line counts by language.</p>
+              <dl id="language-breakdown" class="stats"></dl>
+            </div>
+          </details>
         </div>
-        <aside class="meta-selection" aria-labelledby="selection-title">
-          <h3 id="selection-title">Selected commits</h3>
-          <p id="selection-count" role="status" aria-live="polite">No commits selected</p>
-          <button id="clear-selection" class="secondary-button" type="button" disabled>Clear selection</button>
-          <h4>Language breakdown</h4>
-          <p id="selection-help" class="section-note">Select dots to see their line counts by language.</p>
-          <dl id="language-breakdown" class="stats"></dl>
-        </aside>
       </div>
-      <p class="section-note meta-data-note">The data here is based on the latest committed code version of the website, and only counts the lines of code that still exist in that version. The area of the circle represents the number of lines left by each commit, not the total number of lines changed at that time.</p>
-      <p class="section-note">Keyboard: Tab to a dot for details, Enter to reach its commit link, and Escape to close the details. <a href="loc.csv" download>Download the line data</a>.</p>
+    </section>
+    <section id="file-explorer" aria-labelledby="files-title" hidden>
+      <div class="file-heading">
+        <h2 id="files-title">One dot, one retained line</h2>
+        <button id="file-reset" class="secondary-button" type="button">Show all commits</button>
+      </div>
+      <p id="file-help">Each dot represents a line that still exists in the saved code snapshot. The color indicates the programming language, and the files are sorted from most to least number of lines shown. The time filter only keeps lines of code that are committed at or before the selected cutoff time. It does not restore the full size of each file at that time.</p>
+      <p id="file-summary" class="section-note" role="status" aria-live="polite"></p>
+      <ul id="file-legend" aria-label="Programming languages"></ul>
+      <dl id="files" aria-describedby="file-help"></dl>
     </section>
     <noscript><p class="notice">JavaScript is needed to load the code data and draw this chart.</p></noscript>
   </main>

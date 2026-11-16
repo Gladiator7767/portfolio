@@ -1,12 +1,12 @@
 # Yifeng Zheng: Personal site and portfolio
 
-A course portfolio for DSC 106 Labs 1–6, built with HTML, CSS, and browser-native JavaScript. Labs 5 and 6 import D3 7.9.0 from jsDelivr. The browser needs no build step. Lab 6 uses the local development dependency `elocuent` to generate its saved CSV before publication.
+A course portfolio for DSC 106 Labs 1–6 and 8, built with HTML, CSS, and browser-native JavaScript. Charts import D3 7.9.0 from jsDelivr; Lab 8 adds Scrollama 3.2.0. The browser needs no build step. The local development dependency `elocuent` generates the saved code CSV. Lab 7's Bikewatching map remains in its separate repository.
 
 ## Pages
 
 - **Home**: introduction, live public GitHub stats, and the first three projects from the shared JSON file.
 - **Projects**: an automatically counted list of coursework and twelve clearly labeled fictional concepts, with a D3 pie chart of projects by year. Search across metadata and select a year using a slice or legend button. Both filters work together in either order. All entries have a title, image, description, and year. Bikewatching includes an actual map screenshot and a link to its separate GitHub Pages website.
-- **Meta**: summary statistics and a date/time scatterplot of commits represented in the saved code snapshot. Hover for details; brush dots to compare their retained lines by language. Circle area represents retained line count.
+- **Meta**: a scrolling commit story, time filter, date/time scatterplot, and a one-dot-per-line file visualization. Hover for details; brush dots to compare their retained lines by language. Circle area represents retained line count. File rows are sorted by displayed line counts and colored by language.
 - **Resume**: a fictionalized resume using sections, articles, lists, links, and machine-readable dates.
 - **Contact**: an email draft form with JavaScript encoding for the subject and message.
 
@@ -51,7 +51,7 @@ The HTML form retains a native GET fallback if JavaScript is disabled, though cl
 
 ## Publication
 
-Scripts and styles use the shared `?v=6` release suffix so cached pages load the Lab 6 navigation and modules together. Keep the HTML script URLs and module imports consistent when changing this suffix in a later release.
+The Meta module and stylesheet use `?v=8`; shared scripts keep their existing version suffixes. Bump the relevant URL suffix when publishing another change to that resource.
 
 The Projects chart uses D3 `rollups`, `pie`, `arc`, and an ordinal color scale. Its counts summarize the current search results. The selected year additionally filters the cards, while other matching years remain available for switching. The status text distinguishes visible cards from search matches. Year identity and colors remain stable when a query removes a category; selected slices and legend buttons stay synchronized. Keyboard users can activate slices with Enter or Space and use the native legend buttons. Clearing filters restores the full dataset, including after an empty result.
 
@@ -92,3 +92,31 @@ come from the main working folder. Keep `node_modules/` ignored;
 Lab 6 check-off is a voiced computer recording, MP4, at most 60 seconds:
 show the quantitative visualization, interact with it, then explicitly share
 the most interesting thing learned. No separate writeup is required by the lab page.
+
+## Lab 8: animation and scrollytelling
+
+Official instructions: https://dsc106.com/labs/lab08/
+
+The current code follows Steps 1–3: a 0–100 time slider maps through a time scale's
+inverse; commits are filtered by their actual timestamp; the SVG updates in place;
+commit IDs are the data-join keys; and CSS transitions plus `@starting-style`
+animate new dots. Scrollama updates the same cutoff as each dated story step enters
+the viewport, including when scrolling backwards. Changing the time cutoff clears
+the old screen-space brush and synchronizes the statistics, scatterplot and files.
+The color mapping and radius scale remain stable across filtering. Reduced-motion
+preferences disable transitions.
+
+Each file dot represents one retained line from a qualifying commit, including blank
+lines. This reconstructs attribution within the saved snapshot, not the historical
+size of every file. The saved CSV currently describes the code committed on November 4,
+2026 (source commit `15ef788`); it intentionally remains usable during local editing.
+Regenerate it from a clean committed snapshot using the procedure above when publishing
+the completed Lab 8 code, rather than including uncommitted zero-hash lines.
+
+The scatterplot uses recorded local date/time fields; the time-filter cutoff is labeled
+UTC. Keyboard details, brush selection and language counts from Lab 6 remain available.
+The optional second scrollytelling section for file sizes is not implemented; the file
+unit visualization itself is implemented and required. No additional pie chart is needed.
+
+Record at most 60 seconds, in this order: scroll and demonstrate the changing scatterplot;
+show the file unit visualization; explicitly state the most interesting thing learned.
