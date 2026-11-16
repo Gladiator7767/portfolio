@@ -108,10 +108,18 @@ preferences disable transitions.
 
 Each file dot represents one retained line from a qualifying commit, including blank
 lines. This reconstructs attribution within the saved snapshot, not the historical
-size of every file. The saved CSV currently describes the code committed on November 4,
-2026 (source commit `15ef788`); it intentionally remains usable during local editing.
-Regenerate it from a clean committed snapshot using the procedure above when publishing
-the completed Lab 8 code, rather than including uncommitted zero-hash lines.
+size of every file. The saved CSV describes source commit `e2a43b3`, containing 1,609
+lines in 11 files attributed to 11 commits. See `meta/snapshot.json` for provenance.
+It was generated with elocuent from an explicit list of Git-tracked HTML/CSS/JS files
+in a clean working tree, excluding dependencies. Every line's commit attribution was
+independently checked with `git blame --line-porcelain`. Regenerate after source changes
+instead of including uncommitted zero-hash lines.
+
+For the summary's average line length, this CSV corrects an elocuent 0.0.4 bug:
+the package trims each line and then unnecessarily removes two more characters when
+using `--spaces 2`. The `length` column was recomputed from the corresponding committed
+source line as its trimmed JavaScript string length. Counts, line numbers, languages
+and commit attribution are unchanged. Repeat this correction after running the package.
 
 The scatterplot uses recorded local date/time fields; the time-filter cutoff is labeled
 UTC. Keyboard details, brush selection and language counts from Lab 6 remain available.

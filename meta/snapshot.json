@@ -1,0 +1,13 @@
+{
+  "source_commit": "e2a43b3cc9f729722275fa254a05505feff3114d",
+  "source_repository": "https://github.com/Gladiator7767/portfolio",
+  "generated_on": "2026-11-16",
+  "retained_lines": 1609,
+  "files": 11,
+  "commits_represented": 11,
+  "languages": ["css", "html", "js"],
+  "generator": "elocuent 0.0.4, --spaces 2, explicit list of Git-tracked HTML/CSS/JS files",
+  "verification": "Every file, line number and commit prefix checked against git show and git blame --line-porcelain at source_commit.",
+  "length_correction": "The length field was recomputed as the trimmed source line's JavaScript string length. elocuent 0.0.4 trims and then removes two extra characters with --spaces 2. File counts and commit attribution are unchanged.",
+  "interpretation": "Surviving lines attributed to their last-changing commit in this saved snapshot, including blank lines. Not a record of every historical edit or historical file size."
+}
